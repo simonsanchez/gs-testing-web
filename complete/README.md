@@ -38,3 +38,8 @@ open target/site/jacoco/index.html
 ![JaCoCo Detailed View](jacoco-2.png?raw=true "JaCoCo Detailed View")
 
 ![JaCoCo Greeting Controller](jacoco-3.png?raw=true "JaCoCo Greeting Controller")
+
+## Refs
+
+- https://stackoverflow.com/a/36305148
+- https://www.eclemma.org/jacoco/trunk/doc/maven.html
