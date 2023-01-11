@@ -24,7 +24,7 @@ curl localhost:8080
 The following command will run tests and generate test coverage files.
 
 ```sh
-./mvnw clean jacoco:prepare-agent install jacoco:report
+./mvnw clean test
 ```
 
 View the files in a browser
