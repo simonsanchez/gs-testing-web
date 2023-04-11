@@ -44,7 +44,24 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<configuration>
+					<target name="reports">
+						<junitreport todir="test-report">
+							<fileset dir="test-output">
+								<include name="*/*.xml"/>
+							</fileset>
+
+							<report format="noframes"  todir="test-report"/>
+						</junitreport>
+					</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
