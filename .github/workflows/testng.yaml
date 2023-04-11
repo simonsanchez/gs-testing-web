@@ -1,15 +1,15 @@
 on: workflow_dispatch
 
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+
 jobs:
   test-results:
     name: Test Results (reference)
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: read
-      checks: write
-      pull-requests: write
-
     steps:
       - uses: actions/checkout@v3
         with:
