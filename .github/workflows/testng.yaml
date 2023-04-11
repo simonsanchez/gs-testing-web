@@ -1,3 +1,5 @@
+on: workflow_dispatch
+
 jobs:
   test-results:
     name: Test Results (reference)
