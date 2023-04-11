@@ -14,10 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          path: "./complete"
       - name: Generate tests
-        run: mvn clean test
+        run: cd complete && mvn clean test
       - name: Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
