@@ -31,5 +31,5 @@ jobs:
       - name: starburstdata - Publish test results
         uses: starburstdata/action-testng-report@v1
         if: always()
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
