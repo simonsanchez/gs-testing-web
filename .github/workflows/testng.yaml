@@ -1,3 +1,5 @@
+name: TestNG Test Results
+
 on:
   - workflow_dispatch
   - push
@@ -10,19 +12,23 @@ permissions:
 
 jobs:
   test-results:
-    name: Test Results (reference)
+    name: Test Results
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup Java 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
-          java-version: '17'
+          distribution: "zulu"
+          java-version: "17"
       - name: Generate tests
         run: cd complete && mvn clean test
-      - name: Publish test results
+      - name: EnricoMi - Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           junit_files: "**/target/surefire-reports/*.xml"
+      - name: starburstdata - Publish test results
+        uses: starburstdata/action-testng-report@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
