@@ -11,8 +11,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  test-results:
-    name: Test Results
+  sample:
+    name: Sample job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
