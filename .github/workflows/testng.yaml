@@ -23,11 +23,6 @@ jobs:
           java-version: "17"
       - name: Generate tests
         run: cd complete && mvn clean test
-      # - name: EnricoMi - Publish test results
-      #   uses: EnricoMi/publish-unit-test-result-action@v2
-      #   if: always()
-      #   with:
-      #     junit_files: "**/target/surefire-reports/*.xml"
       - name: starburstdata - Publish test results
         uses: starburstdata/action-testng-report@v1
         if: always()
