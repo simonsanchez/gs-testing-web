@@ -23,8 +23,10 @@ jobs:
           java-version: "17"
       - name: Generate tests
         run: cd complete && mvn clean test
-      - name: starburstdata - Publish test results
-        uses: starburstdata/action-testng-report@v1
-        if: always()
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: starburstdata - Publish test results
+      #   uses: starburstdata/action-testng-report@v1
+      #   if: always()
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: scacap/action-surefire-report@v1 - Test Results
+        report_paths: "**/surefire-reports/testng-results.xml"
