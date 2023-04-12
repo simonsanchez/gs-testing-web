@@ -30,4 +30,5 @@ jobs:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: scacap/action-surefire-report@v1 - Test Results
         uses: scacap/action-surefire-report@v1
-        report_paths: "**/surefire-reports/testng-results.xml"
+        with:
+          report_paths: "**/surefire-reports/testng-results.xml"
